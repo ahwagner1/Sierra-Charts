@@ -6,6 +6,12 @@
 
 SCDLLName("CSV_LEVEL_IMPORTER")
 
+/*
+	Written by Ashton
+ 	@shlekht on discord
+*/
+
+
 struct DrawingData {
 	// make sure csv follows this format
 	float Price;

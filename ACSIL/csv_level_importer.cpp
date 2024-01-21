@@ -222,7 +222,6 @@ SCSFExport scsf_CsvLevelImporter(SCStudyInterfaceRef sc)
 				tokens.push_back(t);
 				t = strtok(NULL, "/");
 			}
-			delete[] cstr;
 			
 			dateTime.SetDateTimeYMDHMS(
 				atoi(tokens[0]),
@@ -235,7 +234,8 @@ SCSFExport scsf_CsvLevelImporter(SCStudyInterfaceRef sc)
 			
 			Tool.BeginIndex = sc.GetNearestMatchForSCDateTime(sc.ChartNumber, dateTime);
 			sc.UseTool(Tool);
-			
+
+			delete[] cstr;
 		}
 	}
 }

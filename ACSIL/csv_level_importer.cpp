@@ -9,6 +9,9 @@ SCDLLName("CSV_LEVEL_IMPORTER")
 /*
 	Written by Ashton
  	@shlekht on discord
+
+  	TODO:
+   	Add the ability to show notes with price levels
 */
 
 

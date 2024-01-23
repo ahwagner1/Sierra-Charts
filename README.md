@@ -1,3 +1,5 @@
+rnadom files python and c++ files I use for sierra charts
+
 csv_importer.cpp documentation:
 
 This study lets you draw horizontal rays on the chart based on data from a csv\n

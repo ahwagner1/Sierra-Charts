@@ -1,4 +1,4 @@
-rnadom files python and c++ files I use for sierra charts
+random files python and c++ files I use for sierra charts  
 
 csv_importer.cpp documentation:
 

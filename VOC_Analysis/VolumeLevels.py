@@ -1,23 +1,23 @@
 from VolDeltaLevelsLibrary import (plot_vol_and_delta, get_delta_levels, get_volume_levels)
 
 #input paths
-es_data = "C:\\Users\\akbla\\OneDrive\\Desktop\\Python Projects\\VOC_Analysis\\ES 8t range.txt"
-nq_data = "C:\\Users\\akbla\\OneDrive\\Desktop\\Python Projects\\VOC_Analysis\\NQ 16t range.txt"
-cl_data = "C:\\Users\\akbla\\OneDrive\\Desktop\\Python Projects\\VOC_Analysis\\CL 8t range.txt"
-gc_data = "C:\\Users\\akbla\\OneDrive\\Desktop\\Python Projects\\VOC_Analysis\\GC 6t range.txt"
+es_data = ""
+nq_data = ""
+cl_data = ""
+gc_data = ""
 
 # output paths
-es_vol_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\ES_LEVELS.csv"
-es_delta_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\ES_DELTA_LEVELS.csv"
+es_vol_path = ""
+es_delta_path = ""
 
-nq_vol_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\NQ_LEVELS.csv"
-nq_delta_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\NQ_DELTA_LEVELS.csv"
+nq_vol_path = ""
+nq_delta_path = ""
 
-cl_vol_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\CL_LEVELS.csv"
-cl_delta_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\CL_DELTA_LEVELS.csv"
+cl_vol_path = ""
+cl_delta_path = ""
 
-gc_vol_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\GC_LEVELS.csv"
-gc_delta_path = "C:\\Users\\akbla\\OneDrive\\Desktop\\GC_DELTA_LEVELS.csv"
+gc_vol_path = ""
+gc_delta_path = ""
 
 
 

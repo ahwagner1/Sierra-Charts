@@ -129,6 +129,7 @@ SCSFExport scsf_CsvLevelImporter(SCStudyInterfaceRef sc)
 			Tool.AddMethod = UTAM_ADD_OR_ADJUST;
 			Tool.DrawingType = DRAWING_HORIZONTAL_RAY;
 			Tool.BeginValue = it->Price;
+			Tool.ShowPrice = 1;
 			
 			std::map<std::string, ColorCodes> mapColorCodes = {
 				{"red", eRed},

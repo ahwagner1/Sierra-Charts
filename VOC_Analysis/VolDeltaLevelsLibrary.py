@@ -21,19 +21,17 @@ def plot_vol_and_delta(file_path: str, symbol: str) -> None:
     Returns:
     - None: Just writes to a file
     """
-        
-    # Read the CSV file
+    
     dataset = pd.read_csv(file_path)
 
-    # Extract data columns
+    # extract data columns
     volume = dataset.iloc[:, 6:7].values
     askVolume = dataset.iloc[:, 8:9].values
     bidVolume = dataset.iloc[:, 9:10].values
 
-    # Create subplots
     fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
 
-    # Plot Volume distribution
+    # plot volume distribution
     if (symbol != "ES"):
         axes[0].hist(volume, range=[0, 5000], color='blue', edgecolor='black', bins=250)
     else:
@@ -42,7 +40,7 @@ def plot_vol_and_delta(file_path: str, symbol: str) -> None:
     axes[0].set_xlabel('Volume')
     axes[0].set_ylabel('# of occurrences')
 
-    # Plot Delta distribution
+    # plot delta distribution
     if (symbol != "ES"):
         axes[1].hist(askVolume - bidVolume, range=[-1000, 1000], color='blue', edgecolor='black', bins=1000)
     else:
@@ -51,11 +49,7 @@ def plot_vol_and_delta(file_path: str, symbol: str) -> None:
     axes[1].set_title('Histogram of Delta (Ask Volume - Bid Volume)')
     axes[1].set_xlabel('Delta')
     axes[1].set_ylabel('# of occurrences')
-
-    # Adjust layout to prevent overlapping
     plt.tight_layout()
-
-    # Show the plots
     plt.show()
 
 def get_volume_levels(input_file_path: str, output_file_path: str, threshold: int, dynamic_linewidth: bool=True) -> None:
@@ -76,10 +70,10 @@ def get_volume_levels(input_file_path: str, output_file_path: str, threshold: in
     data.columns = [col.strip() for col in data.columns]
     filtered_df = data[data["Volume"] > threshold]
 
-    # Calculate percentiles for Volume
+    # calculate percentiles for Volume
     volume_percentiles = filtered_df["Volume"].quantile([p / 100 for p in percentiles])
-    # Create dynamic line widths based on percentiles
-    line_widths = filtered_df["Volume"].apply(lambda x: sum(x >= volume_percentiles) + 1)
+    # create dynamic line widths based on percentiles
+    line_widths = filtered_df["Volume"].apply(lambda x: sum(x >= volume_percentiles) + 1) # +1 because linewidths in sierra start at 1, not 0
 
 
     # parsing and combining the date times to let the csv_importer study work properly
@@ -124,9 +118,9 @@ def get_delta_levels(input_file_path: str, output_file_path: str, threshold: int
     filtered_df = data[delta_condition]
     color_array = np.where((data["AskVolume"].loc[delta_condition] - data["BidVolume"].loc[delta_condition] > 0), "cyan", "red")
 
-     # Calculate percentiles for Delta
+     # calculate percentiles for Delta
     delta_percentiles = filtered_df["AskVolume"].sub(filtered_df["BidVolume"]).quantile([p / 100 for p in percentiles])
-    # Create dynamic line widths based on percentiles
+    # create dynamic line widths based on percentiles
     line_widths = (filtered_df["AskVolume"] - filtered_df["BidVolume"]).apply(lambda x: sum(x >= delta_percentiles) + 1)
 
     # parsing and combining the date times to let the csv_importer study work properly
